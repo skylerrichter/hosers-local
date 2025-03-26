@@ -13,7 +13,7 @@ services:
     restart: always
     env_file: ./.server.env
     ports:
-      - 8080:8080
+      - 8181:8181
     depends_on:
       db:
         condition: service_healthy
@@ -22,9 +22,9 @@ services:
     restart: always
     image: ghcr.io/zitadel/zitadel:latest
     command: 'start-from-init --masterkey "MasterkeyNeedsToHave32Characters" --tlsMode disabled'
-    env_file: ./.zitadel/env
+    env_file: ./.zitadel.env
     ports:
-      - 8181:8080
+      - 8080:8080
     depends_on:
       db:
         condition: service_healthy
