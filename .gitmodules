@@ -1,0 +1,9 @@
+[submodule "mobile"]
+	path = mobile
+	url = git@github.com:skylerrichter/hosers-mobile.git
+[submodule "web"]
+	path = web
+	url = git@github.com:skylerrichter/hosers-web.git
+[submodule "server"]
+	path = server
+	url = git@github.com:skylerrichter/hosers-server.git
