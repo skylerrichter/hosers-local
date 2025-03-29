@@ -8,16 +8,6 @@ services:
     volumes:
       - dbdata:/var/lib/postgresql/data
 
-  server:
-    build: ./server
-    restart: always
-    env_file: ./.server.env
-    ports:
-      - 8181:8181
-    depends_on:
-      db:
-        condition: service_healthy
-
   zitadel:
     restart: always
     image: ghcr.io/zitadel/zitadel:latest
@@ -28,6 +18,16 @@ services:
     depends_on:
       db:
         condition: service_healthy
+
+  # server:
+  #   build: ./server
+  #   restart: always
+  #   env_file: ./.server.env
+  #   ports:
+  #     - 8181:8181
+  #   depends_on:
+  #     db:
+  #       condition: service_healthy
 
 volumes:
   dbdata:
